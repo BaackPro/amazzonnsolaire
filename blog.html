@@ -291,6 +291,7 @@
             display: flex;
             align-items: center;
             margin-right: 2rem;
+            font-weight: 600;
         }
 
         .article-meta .author img {
@@ -520,7 +521,7 @@
             left: 0;
             width: 40px;
             height: 2px;
-            background-color: var(--accept-color);
+            background-color: var(--accent-color);
         }
 
         .footer-col p, .footer-col a {
@@ -590,6 +591,31 @@
             color: var(--white);
         }
 
+        /* CORRECTION: Supprimer les points des listes dans le footer */
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-col li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 0;
+        }
+
+        /* Animation pour les éléments de liste du footer */
+        .footer-col li::before {
+            content: none; /* Supprime les points */
+        }
+
+        /* Animation alternative pour les liens du footer */
+        .footer-col li a {
+            transition: var(--transition);
+            display: block;
+            padding: 0.2rem 0;
+        }
+
         /* Animations */
         @keyframes fadeInDown {
             from {
@@ -651,7 +677,7 @@
                 z-index: 999;
             }
 
-            .main-nav active {
+            .main-nav.active {
                 right: 0;
             }
 
@@ -698,12 +724,21 @@
                 grid-template-columns: 1fr;
             }
             
+            /* CORRECTION: Afficher le texte du logo sur mobile */
             .logo span {
-                display: none;
+                display: inline !important;
+                font-size: 1.2rem;
             }
             
             .logo {
-                font-size: 0;
+                font-size: 1.2rem;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .logo-img {
+                width: 100px;
+                margin-bottom: 5px;
             }
 
             .legal-links {
@@ -829,8 +864,9 @@
                     <li><a href="about.html">À propos</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="produits.html">Produits</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <!-- CORRECTION: Blog avant Contact -->
                     <li><a href="blog.html" class="active" aria-current="page">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
             
@@ -907,7 +943,7 @@
                         <p>Les pompes solaires permettent l'irrigation des cultures sans dépendre des carburants fossiles, réduisant ainsi les coûts d'exploitation pour les agriculteurs.</p>
 
                         <h3>Secteur tertiaire</h3>
-                        <p>Les entreprises peuvent réduire leurs factures d'électricité en installant des systèmes solaires sur leurs toits, tout en améliorant leur image écologique.</p>
+                        <p>Les entreprises peuvent réduire leurs factures d'électricité en installando des systèmes solaires sur leurs toits, tout en améliorant leur image écologique.</p>
 
                         <blockquote>
                             "L'énergie solaire n'est plus une alternative coûteuse, mais une solution économique et fiable pour l'Afrique. Le continent possède le potentiel pour devenir un leader mondial dans ce domaine."
@@ -927,7 +963,7 @@
                         <p>Chez Amazzonn Solaire, nous nous engageons à relever ces défis en proposant des solutions financières adaptées, des formations techniques et un accompagnement personnalisé pour chaque projet.</p>
 
                         <h2>L'avenir est solaire</h2>
-                        <p>Les innovations technologiques continuent de faire baisser les coûts et d'améliorer l'efficacité des panneaux solaires. Les nouvelles générations de cellules photovoltaïques promettent des rendements encore plus élevés, rending l'énergie solaire de plus en plus accessible.</p>
+                        <p>Les innovations technologiques continuent de faire baisser les coûts et d'améliorer l'efficacité des panneaux solaires. Les nouvelles générations de cellules photovoltaïques promettent des rendements encore plus élevés, rendant l'énergie solaire de more en plus accessible.</p>
 
                         <p>Au Bénin, le gouvernement soutient de plus en plus les initiatives en faveur des énergies renouvelables, avec des programmes d'incitation et des partenariats public-privé. Cette dynamique positive ouvre la voie à un avenir énergétique plus durable et indépendant.</p>
 
@@ -962,7 +998,7 @@
                         <div class="related-card-content">
                             <h3>L'Énergie Solaire en Afrique : Potentiel et Perspectives</h3>
                             <p>Découvrez comment l'énergie solaire peut transformer le paysage énergétique africain pour un avenir durable.</p>
-                            <a href="#">Lire la suite <i class="fas fa-arrow-right"></i></a>
+                            <a href="article-solaire-afrique.html">Lire la suite <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <div class="related-card">
@@ -970,7 +1006,7 @@
                         <div class="related-card-content">
                             <h3>10 Conseils pour Réduire sa Consommation Énergétique</h3>
                             <p>Des astuces simples et efficaces pour faire des économies tout en préservant l'environnement.</p>
-                            <a href="#">Lire la suite <i class="fas fa-arrow-right"></i></a>
+                            <a href="article-conseils-energie.html">Lire la suite <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <div class="related-card">
@@ -978,7 +1014,7 @@
                         <div class="related-card-content">
                             <h3>Le Stockage de l'Énergie Solaire : Solutions et Innovations</h3>
                             <p>Tour d'horizon des technologies de stockage qui rendent l'énergie solaire disponible 24h/24.</p>
-                            <a href="#">Lire la suite <i class="fas fa-arrow-right"></i></a>
+                            <a href="article-stockage-solaire.html">Lire la suite <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -1008,8 +1044,9 @@
                         <li><a href="about.html">À propos</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="produits.html">Produits</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <!-- CORRECTION: Blog avant Contact -->
                         <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 
@@ -1033,8 +1070,9 @@
                         <p><strong>Bureau technique:</strong><br>
                         Djougou, Bénin</p>
                         
+                        <!-- CORRECTION: Adresse email mise à jour -->
                         <p><strong>Email:</strong><br>
-                        <a href="mailto:contactamasolaire@gmail.com">amazzonnsolaire@gmail.com</a></p>
+                        <a href="mailto:amazzonnsolaire@gmail.com">amazzonnsolaire@gmail.com</a></p>
                         
                         <p><strong>Téléphone:</strong><br>
                         <a href="tel:+2290192810213">+229 01 92 81 02 13</a></p>

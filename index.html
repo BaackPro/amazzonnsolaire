@@ -3,6 +3,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="google-site-verification" content="qUbJAxl_mSPBvEA3eEXiMy-IX7UKLf9ZLqxxpqyazOY" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amazzonn Solaire - Solutions en Énergie Renouvelable</title>
     <meta name="description" content="Expert en solutions d'énergie renouvelable pour particuliers et entreprises">
@@ -12,6 +13,42 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Styles de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header amélioré */
+        .header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 15px 0;
+        }
+        
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
         .logo-img {
             width: 125px;
             height: auto;
@@ -19,13 +56,197 @@
             margin-right: 10px;
             transition: transform 0.3s ease;
         }
+        
         .logo {
             display: flex;
             align-items: center;
             text-decoration: none;
+            color: #2e7d32;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
         }
+        
+        .logo span {
+            color: #4caf50;
+        }
+        
         .logo:hover .logo-img {
             transform: scale(1.05);
+        }
+        
+        /* Navigation améliorée */
+        .main-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        
+        .main-nav li {
+            margin: 0 15px;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: #2e7d32;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #2e7d32;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Menu mobile */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+        
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        /* Hero section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-bg.jpg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Boutons */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background-color: #2e7d32;
+            color: #fff;
+        }
+        
+        .btn-primary:hover {
+            background-color: #1b5e20;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #fff;
+            color: #2e7d32;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Sections */
+        .section-title {
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 50px;
+            color: #2e7d32;
+        }
+        
+        .solutions {
+            padding: 80px 0;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .card-content {
+            padding: 20px;
+        }
+        
+        .card h3 {
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 15px;
+            color: #2e7d32;
+        }
+        
+        .cta {
+            background-color: #2e7d32;
+            color: #fff;
+            text-align: center;
+            padding: 80px 0;
+        }
+        
+        .cta h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 30px;
         }
         
         /* Style pour le footer vert */
@@ -35,25 +256,43 @@
             padding: 3rem 0;
             position: relative;
         }
+        
         .footer a {
             color: #ffffff;
             transition: color 0.3s ease;
         }
+        
         .footer a:hover {
             color: #a5d6a7;
             text-decoration: none;
         }
+        
         .footer h3 {
             color: #ffffff;
             margin-bottom: 1.5rem;
             font-size: 1.25rem;
         }
+        
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-bottom: 2rem;
         }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-address {
+            font-style: normal;
+            line-height: 1.8;
+        }
+        
         .copyright {
             text-align: center;
             padding-top: 2rem;
@@ -159,16 +398,123 @@
             display: block;
         }
         
-        /* Correction des points dans la navigation */
-        .main-nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
+        /* Media Queries pour la responsivité */
+        @media (max-width: 992px) {
+            .main-nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .main-nav li {
+                margin: 5px 10px;
+            }
         }
         
-        .main-nav li {
-            margin: 0 15px;
+        @media (max-width: 768px) {
+            .header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+                justify-content: center;
+            }
+            
+            .menu-toggle {
+                display: flex;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+            
+            .main-nav {
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+            
+            .main-nav.active {
+                max-height: 300px;
+            }
+            
+            .main-nav ul {
+                flex-direction: column;
+                padding: 20px 0;
+            }
+            
+            .main-nav li {
+                margin: 10px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.75rem;
+            }
+            
+            /* Ajustement pour le texte du logo sur mobile */
+            .logo {
+                font-size: 1.2rem;
+                margin-right: 0;
+                padding: 0 10px;
+            }
+            
+            .logo-img {
+                width: 100px;
+                margin-right: 8px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding: 60px 0;
+            }
+            
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            /* Ajustements supplémentaires pour petits écrans */
+            .logo {
+                font-size: 1.1rem;
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo-img {
+                width: 80px;
+                margin-right: 0;
+                margin-bottom: 5px;
+            }
+            
+            .website-request-btn {
+                bottom: 20px;
+                right: 20px;
+                padding: 10px 15px;
+                font-size: 9px;
+            }
+            
+            .website-options {
+                right: 20px;
+                width: 220px;
+            }
         }
     </style>
 </head>
@@ -177,9 +523,9 @@
         <div class="container">
             <a href="index.html" class="logo">
                 <img src="images/logo/logoama.png" alt="Logo AmazzonnSolaire" class="logo-img">
-                Amazzonn <span>Solaire</span>
+                <span>Amazzonn</span> <span>Solaire</span>
             </a>
-            <nav class="main-nav">
+            <nav class="main-nav" id="mainNav">
                 <ul>
                     <li><a href="index.html" class="nav-link">Accueil</a></li>
                     <li><a href="about.html" class="nav-link">À propos</a></li>
@@ -189,7 +535,7 @@
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
-            <button class="menu-toggle" aria-label="Menu mobile">
+            <button class="menu-toggle" aria-label="Menu mobile" id="menuToggle">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -298,6 +644,15 @@
         // Mise à jour automatique de l'année dans le footer
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
+        // Gestion du menu mobile
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        
+        menuToggle.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+            this.classList.toggle('active');
+        });
+
         // Gestion du bouton "Demandez votre site web"
         const requestBtn = document.querySelector('.website-request-btn');
         const websiteOptions = document.getElementById('websiteOptions');
@@ -315,6 +670,8 @@
         overlay.addEventListener('click', function() {
             websiteOptions.classList.remove('active');
             overlay.classList.remove('active');
+            mainNav.classList.remove('active');
+            menuToggle.classList.remove('active');
         });
 
         // Redirection WhatsApp

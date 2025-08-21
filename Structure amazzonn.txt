@@ -17,7 +17,7 @@ cd C:\Votre\Dossier\Projet
 
 # Initialiser un dépôt Git local
 git init
-
+# verifier la branche
 # Ajouter tous les fichiers
 git add .
 
@@ -29,4 +29,4 @@ git commit -m "Initial commit"
 git remote add origin https://github.com/VotreNomUtilisateur/NomDuRepo.git
 
 # Pousser le code vers GitHub
-git push -u origin main
+git push -u origin master

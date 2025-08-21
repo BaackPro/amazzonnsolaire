@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nos services - <span style="color: green;">Amazzonn</span><span style="color: orange;">Solaire</span></title>
+    <title>Nos services - Amazzonn Solaire</title>
     <meta name="description" content="Découvrez nos services en énergie renouvelable : solaire, éolien, géothermie. Solutions sur mesure pour particuliers et entreprises au Bénin.">
     <meta name="keywords" content="services énergie solaire, installation panneaux photovoltaïques, éoliennes Bénin, géothermie Cotonou, solutions énergies renouvelables">
     
@@ -24,6 +24,8 @@
             --primary-color: #2E7D32;
             --secondary-color: #4CAF50;
             --accent-color: #8BC34A;
+            --orange-color: #FF9800;
+            --dark-orange: #F57C00;
             --dark-color: #1B5E20;
             --light-color: #F1F8E9;
             --text-color: #333;
@@ -87,8 +89,12 @@
             transition: transform 0.3s ease;
         }
 
-        .logo span {
+        .logo span.amazzonn {
             color: var(--primary-color);
+        }
+        
+        .logo span.solaire {
+            color: var(--orange-color);
         }
 
         .logo:hover .logo-img {
@@ -511,16 +517,43 @@
 
         .legal-links {
             margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
         }
 
         .legal-links a {
             color: rgba(255, 255, 255, 0.5);
             font-size: 0.8rem;
-            margin: 0 0.5rem;
         }
 
         .legal-links a:hover {
             color: var(--white);
+        }
+
+        /* CORRECTION: Supprimer les points des listes dans le footer */
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-col li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 0;
+        }
+
+        /* Animation pour les éléments de liste du footer */
+        .footer-col li::before {
+            content: none; /* Supprime les points */
+        }
+
+        /* Animation alternative pour les liens du footer */
+        .footer-col li a {
+            transition: var(--transition);
+            display: block;
+            padding: 0.2rem 0;
         }
 
         /* Animations */
@@ -649,6 +682,22 @@
             .gallery-grid {
                 grid-template-columns: 1fr;
             }
+            
+            /* CORRECTION: Ajustement du logo pour mobile */
+            .logo {
+                font-size: 1.2rem;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .logo-img {
+                width: 100px;
+                margin-bottom: 5px;
+            }
+            
+            .logo span {
+                display: inline !important;
+            }
         }
 
         @media (max-width: 576px) {
@@ -660,6 +709,11 @@
             .footer-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .legal-links {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
         }
     </style>
 </head>
@@ -668,7 +722,7 @@
         <div class="container">
             <a href="index.html" class="logo" aria-label="AmazzonnSolaire - Retour à l'accueil">
                 <img src="images/logo/logoama.png" alt="Logo AmazzonnSolaire" class="logo-img" width="125" height="60">
-                <span style="color: green;">Amazzonn</span><span style="color: orange;">Solaire</span>
+                <span class="amazzonn">Amazzonn</span><span class="solaire">Solaire</span>
             </a>
             
             <nav class="main-nav" role="navigation" aria-label="Navigation principale">
@@ -792,7 +846,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col footer-about">
-                    <h3><span style="color: green;">Amazzonn</span><span style="color: orange;">Solaire</span></h3>
+                    <h3><span class="amazzonn">Amazzonn</span><span class="solaire">Solaire</span></h3>
                     <p>Experts en solutions d'énergie renouvelable depuis 2023. Nous accompagnons particuliers et entreprises dans leur transition énergétique au Bénin.</p>
                     <div class="social-links">
                         <a href="https://www.facebook.com/share/14Gw6KXc9Xc/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -846,7 +900,7 @@
             
             <div class="footer-bottom">
                 <div class="copyright">
-                    <p>&copy; 2025 <span style="color: green;">Amazzonn</span><span style="color: orange;">Solaire</span>. Tous droits réservés.</p>
+                    <p>&copy; 2025 <span class="amazzonn">Amazzonn</span><span class="solaire">Solaire</span>. Tous droits réservés.</p>
                 </div>
                 <div class="legal-links">
                     <a href="mentions-legales.html">Mentions légales</a>
@@ -887,7 +941,7 @@
                 });
 
                 const galleryItems = document.querySelectorAll('.gallery-item');
-                galleryItems.forEach((item, index) => {
+                galleryItems.forEach((item, index) {
                     const itemPosition = item.getBoundingClientRect().top;
                     if (itemPosition < window.innerHeight - 100) {
                         item.style.opacity = '1';
