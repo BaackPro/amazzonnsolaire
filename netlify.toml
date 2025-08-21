@@ -1,26 +1,18 @@
 
 
 [build]
-  command = "npm run build || echo 'Build completed'"
-  publish = "dist"
-  environment = { NODE_ENV = "production", CI = "true" }
+  publish = "."  # Racine du projet car vous avez index.html à la racine
+  command = "echo 'Build réussi - Site statique'"
 
 [build.environment]
-  # Variables d'environnement pour la construction
   NODE_VERSION = "18"
-  NPM_VERSION = "9"
 
+# Configuration pour le serveur de développement
 [dev]
-  command = "npm run dev"
   port = 3000
-  publish = "dist"
+  publish = "."
 
-# Configuration des redirections
-[[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/:splat"
-  status = 200
-
+# Redirections pour le SPA-like behavior (optionnel)
 [[redirects]]
   from = "/*"
   to = "/index.html"
@@ -37,12 +29,7 @@
   to = "/404.html"
   status = 404
 
-[[redirects]]
-  from = "/administrator/*"
-  to = "/404.html"
-  status = 404
-
-# Headers de sécurité
+# Headers de sécurité simplifiés
 [[headers]]
   for = "/*"
   [headers.values]
@@ -50,30 +37,20 @@
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
-    Content-Security-Policy = """
-      default-src 'self';
-      script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com;
-      style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com;
-      font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com;
-      img-src 'self' data: https:;
-      connect-src 'self' https://api.formspree.io;
-      frame-ancestors 'none';
-    """
 
-# Headers spécifiques pour les assets
+# Cache pour les assets statiques
 [[headers]]
-  for = "/assets/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/*.css"
+  for = "/css/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000"
 
 [[headers]]
-  for = "/*.js"
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/images/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000"
 
@@ -82,32 +59,9 @@
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
-# Configuration pour les formulaires
+# Configuration de base pour les contextes
 [context.production.environment]
-  FORMSPREE_URL = "https://formspree.io/f/your-form-id"
-  SITE_URL = "https://votre-site.netlify.app"
+  NODE_ENV = "production"
 
 [context.deploy-preview.environment]
-  FORMSPREE_URL = "https://formspree.io/f/your-staging-form-id"
-  NODE_ENV = "staging"
-
-[context.branch-deploy.environment]
-  FORMSPREE_URL = "https://formspree.io/f/your-staging-form-id"
-  NODE_ENV = "staging"
-
-# Fonctions serverless (si nécessaires)
-[functions]
-  directory = "netlify/functions"
-  node_bundler = "esbuild"
-
-# Gestion des branches
-[build.environment]
-  BRANCH = "$BRANCH"
-
-# Configuration d'image optimization
-[context.production.environment]
-  NETLIFY_IMAGE_CDN = "true"
-
-# Prérendu (si vous utilisez des SPAs)
-[build.processing]
-  skip_processing = true
+  NODE_ENV = "development"
