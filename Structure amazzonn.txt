@@ -1,0 +1,32 @@
+mon-site-energie/
+├── index.html
+├── about.html
+├── services.html
+├── contact.html
+├── css/
+│   └── style.css
+├── js/
+│   └── script.js
+├── images/
+└── netlify.toml
+
+
+
+# Se déplacer dans le dossier de votre projet
+cd C:\Votre\Dossier\Projet
+
+# Initialiser un dépôt Git local
+git init
+
+# Ajouter tous les fichiers
+git add .
+
+# Faire un premier commit
+git commit -m "Initial commit"
+
+# Créer le dépôt sur GitHub (via l'interface web d'abord)
+# Puis lier le dépôt local au dépôt distant
+git remote add origin https://github.com/VotreNomUtilisateur/NomDuRepo.git
+
+# Pousser le code vers GitHub
+git push -u origin main

@@ -1,0 +1,1383 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Produits Solaires - Amazzonn Solaire</title>
+    <meta name="description" content="Découvrez nos produits solaires de qualité : panneaux photovoltaïques, batteries, régulateurs et convertisseurs pour vos installations au Bénin.">
+    <meta name="keywords" content="produits solaires Bénin, panneaux photovoltaïques, batteries solaires, régulateurs MPPT, convertisseurs solaires">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #2E7D32;
+            --secondary-color: #4CAF50;
+            --accent-color: #8BC34A;
+            --orange-color: #FF9800;
+            --dark-color: #1B5E20;
+            --light-color: #F1F8E9;
+            --text-color: #333;
+            --text-light: #666;
+            --white: #fff;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 700;
+            font-size: 1.5rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .logo-img {
+            width: 125px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo span.amazzonn {
+            color: var(--primary-color);
+        }
+        
+        .logo span.solaire {
+            color: var(--orange-color);
+        }
+
+        .logo:hover .logo-img {
+            transform: scale(1.05);
+        }
+
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .main-nav li {
+            margin-left: 2rem;
+        }
+
+        .main-nav a {
+            color: var(--dark-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .main-nav a:hover {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .main-nav a:hover::after {
+            width: 100%;
+        }
+
+        .main-nav a.active {
+            color: var(--primary-color);
+        }
+
+        .main-nav a.active::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 2rem;
+            height: 2rem;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 10;
+        }
+
+        .menu-toggle span {
+            width: 2rem;
+            height: 0.25rem;
+            background: var(--dark-color);
+            border-radius: 10px;
+            transition: all 0.3s linear;
+            position: relative;
+            transform-origin: 1px;
+        }
+
+        /* Main Content Styles */
+        main {
+            margin-top: 80px;
+        }
+
+        h1, h2, h3, h4 {
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--dark-color);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 6rem 0 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/pattern.png') repeat;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            animation: fadeInUp 0.8s ease;
+            animation-delay: 0.2s;
+        }
+
+        /* Product Categories */
+        .product-categories {
+            padding: 5rem 0;
+            background-color: var(--white);
+        }
+
+        .category-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .category-btn {
+            padding: 0.8rem 1.5rem;
+            background-color: var(--light-color);
+            color: var(--primary-color);
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .category-btn:hover, .category-btn.active {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        .product-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+
+        .product-specs {
+            list-style: none;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .product-specs li {
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .product-specs i {
+            color: var(--accent-color);
+            margin-right: 0.5rem;
+            font-size: 0.8rem;
+        }
+
+        .product-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .price {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .add-to-cart {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .add-to-cart:hover {
+            background-color: var(--dark-color);
+        }
+
+        /* Cart Button */
+        .view-cart-btn {
+            display: block;
+            margin: 2rem auto;
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1.1rem;
+        }
+
+        .view-cart-btn:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* Cart Modal */
+        .cart-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            overflow-y: auto;
+        }
+
+        .cart-content {
+            background-color: var(--white);
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
+            position: relative;
+            animation: modalFadeIn 0.3s;
+        }
+
+        .close-cart {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 1.5rem;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-cart:hover {
+            color: var(--primary-color);
+        }
+
+        .cart-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+        }
+
+        .cart-items {
+            margin-bottom: 2rem;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item-info {
+            flex: 1;
+        }
+
+        .cart-item-name {
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .cart-item-price {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .quantity-btn {
+            background-color: var(--light-color);
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .quantity-btn:hover {
+            background-color: var(--accent-color);
+        }
+
+        .cart-total {
+            text-align: right;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            padding-top: 1rem;
+            border-top: 2px solid var(--accent-color);
+        }
+
+        .total-amount {
+            color: var(--primary-color);
+        }
+
+        .whatsapp-order {
+            display: block;
+            text-align: center;
+            background-color: #25D366;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            margin-top: 1.5rem;
+        }
+
+        .whatsapp-order:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+        }
+
+        /* Tech Specs */
+        .tech-specs {
+            padding: 5rem 0;
+            background-color: var(--light-color);
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .spec-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .spec-card h3 {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .spec-card h3 i {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+        }
+
+        .spec-list {
+            list-style: none;
+        }
+
+        .spec-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .spec-list li:last-child {
+            border-bottom: none;
+        }
+
+        .spec-name {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* Product CTA */
+        .product-cta {
+            padding: 4rem 0;
+            text-align: center;
+            background: linear-gradient(rgba(46, 125, 50, 0.9), rgba(46, 125, 50, 0.9)), url('images/solar-panels-field.jpg') center/cover;
+            color: var(--white);
+        }
+
+        .product-cta h2 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .product-cta h2::after {
+            background-color: var(--accent-color);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .product-cta p {
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            border: 2px solid var(--accent-color);
+        }
+
+        .cta-btn:hover {
+            background-color: transparent;
+            color: var(--accent-color);
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: var(--dark-color);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-col h3 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+
+        .footer-col p, .footer-col a {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        .footer-col a:hover {
+            color: var(--white);
+            text-decoration: none;
+            padding-left: 5px;
+        }
+
+        .footer-about p {
+            line-height: 1.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+            color: var(--white);
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        .copyright {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        .legal-links {
+            margin-top: 1rem;
+        }
+
+        .legal-links a {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.8rem;
+            margin: 0 0.5rem;
+        }
+
+        .legal-links a:hover {
+            color: var(--white);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+
+            .page-header {
+                padding: 4rem 0 3rem;
+            }
+
+            .product-categories, .tech-specs {
+                padding: 3rem 0;
+            }
+
+            .category-nav {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 1rem;
+                flex-wrap: nowrap;
+            }
+
+            .main-nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background-color: var(--white);
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                transition: var(--transition);
+                padding: 6rem 2rem 2rem;
+                z-index: 999;
+            }
+
+            .main-nav.active {
+                right: 0;
+            }
+
+            .main-nav ul {
+                flex-direction: column;
+            }
+
+            .main-nav li {
+                margin: 1rem 0;
+            }
+
+            .main-nav a {
+                font-size: 1.1rem;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .menu-toggle.open span:nth-child(1) {
+                transform: rotate(45deg);
+            }
+
+            .menu-toggle.open span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle.open span:nth-child(3) {
+                transform: rotate(-45deg);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cart-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .cart-item-quantity {
+                align-self: flex-end;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header" role="banner">
+        <div class="container">
+            <a href="index.html" class="logo" aria-label="Amazzonn Solaire - Retour à l'accueil">
+                <img src="images/logo/logoama.png" alt="Logo Amazzonn Solaire" class="logo-img" width="125" height="60">
+                <span class="amazzonn">Amazzonn</span><span class="solaire">Solaire</span>
+            </a>
+            
+            <nav class="main-nav" role="navigation" aria-label="Navigation principale">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="produits.html" class="active" aria-current="page">Produits</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <button class="menu-toggle" aria-label="Menu mobile" aria-expanded="false" aria-controls="main-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main role="main">
+        <section class="page-header">
+            <div class="container">
+                <h1>Nos Produits Solaires</h1>
+                <p>Équipements de haute qualité pour des installations performantes</p>
+            </div>
+        </section>
+
+        <section class="product-categories">
+            <div class="container">
+                <h2>Nos Catégories d'Équipements</h2>
+                
+                <div class="category-nav">
+                    <button class="category-btn active" data-category="all">Tous les produits</button>
+                    <button class="category-btn" data-category="panels">Panneaux Solaires</button>
+                    <button class="category-btn" data-category="batteries">Batteries</button>
+                    <button class="category-btn" data-category="controllers">Régulateurs</button>
+                    <button class="category-btn" data-category="inverters">Convertisseurs</button>
+                    <button class="category-btn" data-category="accessories">Accessoires</button>
+                </div>
+
+                <div class="products-grid">
+                    <!-- Panneau Solaire 1 -->
+                    <div class="product-card" data-category="panels">
+                        <span class="product-badge">Nouveau</span>
+                        <div class="product-image">
+                            <img src="images/products/panneau-400w.jpg" alt="Panneau Solaire 400W" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Panneau Solaire Monocristallin 400W</h3>
+                            <ul class="product-specs">
+                                <li><i class="fas fa-check-circle"></i> Rendement: 21.5%</li>
+                                <li><i class="fas fa-check-circle"></i> Technologie: PERC</li>
+                                <li><i class="fas fa-check-circle"></i> Garantie: 25 ans</li>
+                            </ul>
+                            <div class="product-price">
+                                <span class="price">289 000 FCFA</span>
+                                <button class="add-to-cart" data-id="1" data-name="Panneau Solaire 400W" data-price="289000">
+                                    <i class="fas fa-shopping-cart"></i> Acheter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Batterie 1 -->
+                    <div class="product-card" data-category="batteries">
+                        <div class="product-image">
+                            <img src="images/products/batterie-gel.jpg" alt="Batterie Gel 200Ah" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Batterie Gel 12V 200Ah</h3>
+                            <ul class="product-specs">
+                                <li><i class="fas fa-check-circle"></i> Type: Gel VRLA</li>
+                                <li><i class="fas fa-check-circle"></i> Cycle de vie: 1200+</li>
+                                <li><i class="fas fa-check-circle"></i> Garantie: 3 ans</li>
+                            </ul>
+                            <div class="product-price">
+                                <span class="price">95 000 FCFA</span>
+                                <button class="add-to-cart" data-id="2" data-name="Batterie Gel 200Ah" data-price="425000">
+                                    <i class="fas fa-shopping-cart"></i> Acheter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Régulateur 1 -->
+                    <div class="product-card" data-category="controllers">
+                        <span class="product-badge">Top Vente</span>
+                        <div class="product-image">
+                            <img src="images/products/regulateur-mppt.jpg" alt="Régulateur MPPT 60A" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Régulateur MPPT 60A</h3>
+                            <ul class="product-specs">
+                                <li><i class="fas fa-check-circle"></i> Efficacité: 98%</li>
+                                <li><i class="fas fa-check-circle"></i> Tension: 12/24/48V</li>
+                                <li><i class="fas fa-check-circle"></i> Bluetooth intégré</li>
+                            </ul>
+                            <div class="product-price">
+                                <span class="price">175 000 FCFA</span>
+                                <button class="add-to-cart" data-id="3" data-name="Régulateur MPPT 60A" data-price="175000">
+                                    <i class="fas fa-shopping-cart"></i> Acheter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Convertisseur 1 -->
+                    <div class="product-card" data-category="inverters">
+                        <div class="product-image">
+                            <img src="images/products/convertisseur-3kva.jpg" alt="Convertisseur 3KVA" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Convertisseur Pur Sinus 3KVA</h3>
+                            <ul class="product-specs">
+                                <li><i class="fas fa-check-circle"></i> Pure sine wave</li>
+                                <li><i class="fas fa-check-circle"></i> Tension: 24V</li>
+                                <li><i class="fas fa-check-circle"></i> Protection intégrée</li>
+                            </ul>
+                            <div class="product-price">
+                                <span class="price">325 000 FCFA</span>
+                                <button class="add-to-cart" data-id="4" data-name="Convertisseur 3KVA" data-price="325000">
+                                    <i class="fas fa-shopping-cart"></i> Acheter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accessoire 1 -->
+                    <div class="product-card" data-category="accessories">
+                        <div class="product-image">
+                            <img src="images/products/cable-solaire.jpg" alt="Câble Solaire 6mm" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Câble Solaire 6mm² - Rouge/Noir</h3>
+                            <ul class="product-specs">
+                                <li><i class="fas fa-check-circle"></i> Section: 6mm²</li>
+                                <li><i class="fas fa-check-circle"></i> Longueur: 50m</li>
+                                <li><i class="fas fa-check-circle"></i> Résistant UV</li>
+                            </ul>
+                            <div class="product-price">
+                                <span class="price">45 000 FCFA</span>
+                                <button class="add-to-cart" data-id="5" data-name="Câble Solaire 6mm" data-price="45000">
+                                    <i class="fas fa-shopping-cart"></i> Acheter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panneau Solaire 2 -->
+                    <div class="product-card" data-category="panels">
+                        <div class="product-image">
+                            <img src="images/products/panneau-550w.jpg" alt="Panneau Solaire 550W" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Panneau Solaire Bifacial 550W</h3>
+                            <ul class="product-specs">
+                                <li><i class="fas fa-check-circle"></i> Rendement: 22.8%</li>
+                                <li><i class="fas fa-check-circle"></i> Technologie: Bifacial</li>
+                                <li><i class="fas fa-check-circle"></i> Garantie: 30 ans</li>
+                            </ul>
+                            <div class="product-price">
+                                <span class="price">389 000 FCFA</span>
+                                <button class="add-to-cart" data-id="6" data-name="Panneau Solaire 550W" data-price="389000">
+                                    <i class="fas fa-shopping-cart"></i> Acheter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="view-cart-btn" id="viewCartBtn">
+                    <i class="fas fa-shopping-cart"></i> Voir votre Panier
+                </button>
+            </div>
+        </section>
+
+        <section class="tech-specs">
+            <div class="container">
+                <h2>Caractéristiques Techniques</h2>
+                <div class="specs-grid">
+                    <div class="spec-card">
+                        <h3><i class="fas fa-solar-panel"></i> Panneaux Solaires</h3>
+                        <ul class="spec-list">
+                            <li><span class="spec-name">Technologie:</span> Monocristallin PERC/Bifacial</li>
+                            <li><span class="spec-name">Puissance:</span> 400W à 600W</li>
+                            <li><span class="spec-name">Rendement:</span> 21.5% à 22.8%</li>
+                            <li><span class="spec-name">Garantie:</span> 25 à 30 ans</li>
+                        </ul>
+                    </div>
+                    <div class="spec-card">
+                        <h3><i class="fas fa-battery-full"></i> Batteries</h3>
+                        <ul class="spec-list">
+                            <li><span class="spec-name">Type:</span> Gel, AGM, Lithium</li>
+                            <li><span class="spec-name">Capacité:</span> 100Ah à 300Ah</li>
+                            <li><span class="spec-name">Cycle de vie:</span> 1200+ (Gel)</li>
+                            <li><span class="spec-name">Garantie:</span> 2 à 5 ans</li>
+                        </ul>
+                    </div>
+                    <div class="spec-card">
+                        <h3><i class="fas fa-microchip"></i> Régulateurs</h3>
+                        <ul class="spec-list">
+                            <li><span class="spec-name">Type:</span> MPPT/PWM</li>
+                            <li><span class="spec-name">Courant:</span> 20A à 100A</li>
+                            <li><span class="spec-name">Efficacité:</span> Jusqu'à 98%</li>
+                            <li><span class="spec-name">Connectivité:</span> Bluetooth/WiFi</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-cta">
+            <div class="container">
+                <h2>Des solutions sur mesure pour vos besoins</h2>
+                <p>Nos experts sont à votre disposition pour vous conseiller et vous proposer la solution solaire la plus adaptée à votre situation.</p>
+                <a href="contact.html" class="cta-btn">Contactez nos experts</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Panier -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <span class="close-cart" id="closeCart">&times;</span>
+            <h2 class="cart-title">Votre Panier</h2>
+            <div class="cart-items" id="cartItems">
+                <!-- Les éléments du panier seront ajoutés ici dynamiquement -->
+            </div>
+            <div class="cart-total">
+                Total: <span class="total-amount" id="cartTotal">0 FCFA</span>
+            </div>
+            <a href="https://wa.me/22992810213?text=Je%20souhaite%20commander%20les%20produits%20suivants%20:" class="whatsapp-order" id="whatsappOrder" target="_blank">
+                <i class="fab fa-whatsapp"></i> Commander via WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <h3>Amazzonn<span class="solaire">Solaire</span></h3>
+                    <p>Experts en solutions d'énergie renouvelable depuis 2023. Nous accompagnons particuliers et entreprises dans leur transition énergétique au Bénin.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/14Gw6KXc9Xc/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/AmazzonnSolaire" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com/company/AmazzonnSolaire" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/22992810213" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://instagram.com/AmazzonnSolaire" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Liens utiles</h3>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="produits.html">Produits</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html#solaire">Énergie solaire</a></li>
+                        <li><a href="services.html#eolien">Énergie éolienne</a></li>
+                        <li><a href="services.html#geothermie">Géothermie</a></li>
+                        <li><a href="services.html#audit">Audit énergétique</a></li>
+                        <li><a href="services.html#maintenance">Maintenance</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col footer-contact">
+                    <h3>Contact</h3>
+                    <address>
+                        <p><strong>Siège social:</strong><br>
+                        Cotonou, Bénin</p>
+                        
+                        <p><strong>Bureau technique:</strong><br>
+                        Djougou, Bénin</p>
+                        
+                        <p><strong>Email:</strong><br>
+                        <a href="mailto:amazzonnsolaire@gmail.com">amazzonnsolaire@gmail.com</a></p>
+                        
+                        <p><strong>Téléphone:</strong><br>
+                        <a href="tel:+2290192810213">+229 O1 92 81 02 13</a></p>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2025 Amazzonn<span class="solaire">Solaire</span>. Tous droits réservés.</p>
+                </div>
+                <div class="legal-links">
+                    <a href="mentions-legales.html">Mentions légales</a>
+                    <a href="politique-confidentialite.html">Politique de confidentialité</a>
+                    <a href="cookies.html">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menu mobile
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mainNav = document.querySelector('.main-nav');
+            
+            if (menuToggle && mainNav) {
+                menuToggle.addEventListener('click', function() {
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    this.setAttribute('aria-expanded', !isExpanded);
+                    mainNav.classList.toggle('active');
+                    this.classList.toggle('open');
+                });
+            }
+            
+            // Filtrage des produits par catégorie
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            const productCards = document.querySelectorAll('.product-card');
+            
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const category = this.dataset.category;
+                    
+                    productCards.forEach(card => {
+                        if (category === 'all' || card.dataset.category === category) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Animation au défilement
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.product-card, .spec-card');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementPosition < windowHeight - 100) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Initialisation des animations
+            const animatedElements = document.querySelectorAll('.product-card, .spec-card');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+            
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll();
+            
+            // Gestion du panier
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            
+            // Fonction pour mettre à jour le panier
+            function updateCart() {
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartDisplay();
+            }
+            
+            // Fonction pour afficher le panier
+            function updateCartDisplay() {
+                const cartItems = document.getElementById('cartItems');
+                const cartTotal = document.getElementById('cartTotal');
+                const whatsappOrder = document.getElementById('whatsappOrder');
+                
+                cartItems.innerHTML = '';
+                let total = 0;
+                let whatsappMessage = "Je souhaite commander les produits suivants :%0A";
+                
+                if (cart.length === 0) {
+                    cartItems.innerHTML = '<p class="empty-cart">Votre panier est vide.</p>';
+                    cartTotal.textContent = '0 FCFA';
+                    whatsappOrder.style.display = 'none';
+                    return;
+                }
+                
+                cart.forEach((item, index) => {
+                    const itemTotal = item.price * item.quantity;
+                    total += itemTotal;
+                    
+                    const cartItemElement = document.createElement('div');
+                    cartItemElement.className = 'cart-item';
+                    cartItemElement.innerHTML = `
+                        <div class="cart-item-info">
+                            <div class="cart-item-name">${item.name}</div>
+                            <div class="cart-item-price">${item.price.toLocaleString()} FCFA</div>
+                        </div>
+                        <div class="cart-item-quantity">
+                            <button class="quantity-btn minus" data-index="${index}">-</button>
+                            <span>${item.quantity}</span>
+                            <button class="quantity-btn plus" data-index="${index}">+</button>
+                        </div>
+                    `;
+                    
+                    cartItems.appendChild(cartItemElement);
+                    
+                    // Ajouter au message WhatsApp
+                    whatsappMessage += `${item.quantity}x ${item.name} - ${itemTotal.toLocaleString()} FCFA%0A`;
+                });
+                
+                cartTotal.textContent = `${total.toLocaleString()} FCFA`;
+                
+                // Mettre à jour le lien WhatsApp
+                whatsappMessage += `%0ATotal: ${total.toLocaleString()} FCFA`;
+                whatsappOrder.href = `https://wa.me/22992810213?text=${whatsappMessage}`;
+                whatsappOrder.style.display = 'block';
+                
+                // Ajouter les événements aux boutons de quantité
+                document.querySelectorAll('.quantity-btn.minus').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const index = parseInt(this.dataset.index);
+                        if (cart[index].quantity > 1) {
+                            cart[index].quantity--;
+                        } else {
+                            cart.splice(index, 1);
+                        }
+                        updateCart();
+                    });
+                });
+                
+                document.querySelectorAll('.quantity-btn.plus').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const index = parseInt(this.dataset.index);
+                        cart[index].quantity++;
+                        updateCart();
+                    });
+                });
+            }
+            
+            // Ajouter des produits au panier
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', function() {
+                    const id = this.dataset.id;
+                    const name = this.dataset.name;
+                    const price = parseInt(this.dataset.price);
+                    
+                    // Vérifier si le produit est déjà dans le panier
+                    const existingItemIndex = cart.findIndex(item => item.id === id);
+                    
+                    if (existingItemIndex !== -1) {
+                        // Produit déjà présent, augmenter la quantité
+                        cart[existingItemIndex].quantity++;
+                    } else {
+                        // Nouveau produit, l'ajouter au panier
+                        cart.push({
+                            id,
+                            name,
+                            price,
+                            quantity: 1
+                        });
+                    }
+                    
+                    updateCart();
+                    
+                    // Animation de confirmation
+                    this.innerHTML = '<i class="fas fa-check"></i> Ajouté';
+                    this.style.backgroundColor = '#4CAF50';
+                    
+                    setTimeout(() => {
+                        this.innerHTML = '<i class="fas fa-shopping-cart"></i> Acheter';
+                        this.style.backgroundColor = '';
+                    }, 1500);
+                });
+            });
+            
+            // Gestion de l'affichage du panier
+            const cartModal = document.getElementById('cartModal');
+            const viewCartBtn = document.getElementById('viewCartBtn');
+            const closeCart = document.getElementById('closeCart');
+            
+            viewCartBtn.addEventListener('click', function() {
+                cartModal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
+            
+            closeCart.addEventListener('click', function() {
+                cartModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            window.addEventListener('click', function(event) {
+                if (event.target === cartModal) {
+                    cartModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Initialiser l'affichage du panier
+            updateCartDisplay();
+        });
+    </script>
+</body>
+</html>

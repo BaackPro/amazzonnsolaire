@@ -1,0 +1,935 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos services - <span style="color: green;">Amazzonn</span><span style="color: orange;">Solaire</span></title>
+    <meta name="description" content="Découvrez nos services en énergie renouvelable : solaire, éolien, géothermie. Solutions sur mesure pour particuliers et entreprises au Bénin.">
+    <meta name="keywords" content="services énergie solaire, installation panneaux photovoltaïques, éoliennes Bénin, géothermie Cotonou, solutions énergies renouvelables">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #2E7D32;
+            --secondary-color: #4CAF50;
+            --accent-color: #8BC34A;
+            --dark-color: #1B5E20;
+            --light-color: #F1F8E9;
+            --text-color: #333;
+            --text-light: #666;
+            --white: #fff;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 700;
+            font-size: 1.5rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .logo-img {
+            width: 125px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .logo:hover .logo-img {
+            transform: scale(1.05);
+        }
+
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .main-nav li {
+            margin-left: 2rem;
+        }
+
+        .main-nav a {
+            color: var(--dark-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .main-nav a:hover {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .main-nav a:hover::after {
+            width: 100%;
+        }
+
+        .main-nav a.active {
+            color: var(--primary-color);
+        }
+
+        .main-nav a.active::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 2rem;
+            height: 2rem;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 10;
+        }
+
+        .menu-toggle span {
+            width: 2rem;
+            height: 0.25rem;
+            background: var(--dark-color);
+            border-radius: 10px;
+            transition: all 0.3s linear;
+            position: relative;
+            transform-origin: 1px;
+        }
+
+        /* Main Content Styles */
+        main {
+            margin-top: 80px;
+        }
+
+        h1, h2, h3, h4 {
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--dark-color);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-top: 2rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            text-align: center;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--dark-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 6rem 0 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/pattern.png') repeat;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            animation: fadeInUp 0.8s ease;
+            animation-delay: 0.2s;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 0;
+        }
+
+        .service {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            margin-bottom: 5rem;
+            position: relative;
+        }
+
+        .service:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .service-content {
+            flex: 1;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-image {
+            flex: 1;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .service-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(46, 125, 50, 0.2), rgba(139, 195, 74, 0.2));
+            z-index: 1;
+        }
+
+        .service-image img {
+            transition: var(--transition);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .service:hover .service-image img {
+            transform: scale(1.03);
+        }
+
+        .service-content h2 {
+            color: var(--primary-color);
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 3rem 0;
+            background-color: var(--light-color);
+        }
+
+        .gallery h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 250px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            color: white;
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 4rem 0;
+            background: linear-gradient(rgba(46, 125, 50, 0.9), rgba(46, 125, 50, 0.9)), url('images/cta-bg.jpg') center/cover no-repeat;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta h2 {
+            color: var(--white);
+        }
+
+        .cta h2::after {
+            background-color: var(--accent-color);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .cta p {
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: var(--dark-color);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-col h3 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+
+        .footer-col p, .footer-col a {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        .footer-col a:hover {
+            color: var(--white);
+            text-decoration: none;
+            padding-left: 5px;
+        }
+
+        .footer-about p {
+            line-height: 1.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+            color: var(--white);
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        .copyright {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        .legal-links {
+            margin-top: 1rem;
+        }
+
+        .legal-links a {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.8rem;
+            margin: 0 0.5rem;
+        }
+
+        .legal-links a:hover {
+            color: var(--white);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hover Effects */
+        .service-content {
+            transition: var(--transition);
+        }
+
+        .service:hover .service-content {
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .service {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .service:nth-child(even) {
+                flex-direction: column;
+            }
+
+            .service-content, .service-image {
+                width: 100%;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+
+            .page-header {
+                padding: 4rem 0 3rem;
+            }
+
+            .services {
+                padding: 3rem 0;
+            }
+
+            .service {
+                margin-bottom: 3rem;
+            }
+
+            .main-nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background-color: var(--white);
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                transition: var(--transition);
+                padding: 6rem 2rem 2rem;
+                z-index: 999;
+            }
+
+            .main-nav.active {
+                right: 0;
+            }
+
+            .main-nav ul {
+                flex-direction: column;
+            }
+
+            .main-nav li {
+                margin: 1rem 0;
+            }
+
+            .main-nav a {
+                font-size: 1.1rem;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .menu-toggle.open span:nth-child(1) {
+                transform: rotate(45deg);
+            }
+
+            .menu-toggle.open span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle.open span:nth-child(3) {
+                transform: rotate(-45deg);
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .btn {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header" role="banner">
+        <div class="container">
+            <a href="index.html" class="logo" aria-label="AmazzonnSolaire - Retour à l'accueil">
+                <img src="images/logo/logoama.png" alt="Logo AmazzonnSolaire" class="logo-img" width="125" height="60">
+                <span style="color: green;">Amazzonn</span><span style="color: orange;">Solaire</span>
+            </a>
+            
+            <nav class="main-nav" role="navigation" aria-label="Navigation principale">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="services.html" class="active" aria-current="page">Services</a></li>
+                    <li><a href="produits.html">Produits</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <button class="menu-toggle" aria-label="Menu mobile" aria-expanded="false" aria-controls="main-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main role="main">
+        <section class="page-header">
+            <div class="container">
+                <h1>Nos services</h1>
+                <p>Des solutions sur mesure pour vos besoins énergétiques</p>
+            </div>
+        </section>
+
+        <section class="services">
+            <div class="container">
+                <div class="service">
+                    <div class="service-content">
+                        <h2 id="solaire">Énergie Solaire</h2>
+                        <p>Nos solutions solaires photovoltaïques vous permettent de produire votre propre électricité verte et de réduire votre dépendance aux réseaux traditionnels.</p>
+                        <ul>
+                            <li>Installation de panneaux solaires</li>
+                            <li>Maintenance et entretien</li>
+                            <li>Solutions de stockage d'énergie</li>
+                            <li>Audits énergétiques</li>
+                            <li>Installation de systèmes solaires thermiques</li>
+                            <li>Éclairage solaire extérieur</li>
+                        </ul>
+                        <a href="contact.html?service=solaire" class="btn btn-secondary">Demander un devis</a>
+                    </div>
+                    <div class="service-image">
+                        <img src="images/solaire-detail.jpg" alt="Installation solaire" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="service">
+                    <div class="service-image">
+                        <img src="images/eolien-detail.jpg" alt="Installation éolienne" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h2 id="eolien">Énergie Éolienne</h2>
+                        <p>Que ce soit pour une petite éolienne domestique ou un parc éolien commercial, nous avons l'expertise pour vous guider à chaque étape.</p>
+                        <ul>
+                            <li>Études de faisabilité</li>
+                            <li>Installation de turbines</li>
+                            <li>Connexion au réseau</li>
+                            <li>Maintenance préventive</li>
+                            <li>Systèmes hybrides solaire-éolien</li>
+                            <li>Solutions pour sites isolés</li>
+                        </ul>
+                        <a href="contact.html?service=eolien" class="btn btn-secondary">Demander un devis</a>
+                    </div>
+                </div>
+
+                <div class="service">
+                    <div class="service-content">
+                        <h2 id="geothermie">Géothermie</h2>
+                        <p>Profitez de la chaleur naturelle de la terre pour chauffer ou refroidir votre habitat de manière écologique et économique.</p>
+                        <ul>
+                            <li>Pompes à chaleur géothermiques</li>
+                            <li>Systèmes de chauffage radiant</li>
+                            <li>Solutions pour piscines</li>
+                            <li>Optimisation énergétique</li>
+                            <li>Climatisation géothermique</li>
+                            <li>Échangeurs de chaleur</li>
+                        </ul>
+                        <a href="contact.html?service=geothermie" class="btn btn-secondary">Demander un devis</a>
+                    </div>
+                    <div class="service-image">
+                        <img src="images/geothermie-detail.jpg" alt="Système géothermique" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery">
+            <div class="container">
+                <h2>Nos réalisations</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c29sYXIlMjBwYW5lbHN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60" alt="Installation solaire professionnelle">
+                        <div class="gallery-caption">Installation solaire résidentielle</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1627483262769-04d0a1401487?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c29sYXIlMjBmYXJtfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" alt="Ferme solaire">
+                        <div class="gallery-caption">Ferme solaire commerciale</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1624371066606-cb0135b40b74?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHNvbGFyJTIwcGFuZWxzJTIwaW5zdGFsbGF0aW9ufGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" alt="Installation de panneaux solaires">
+                        <div class="gallery-caption">Installation industrielle</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2>Vous avez un projet?</h2>
+                <p>Nos experts sont à votre disposition pour étudier la solution la plus adaptée à vos besoins.</p>
+                <a href="contact.html" class="btn btn-secondary">Demander un devis personnalisé</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <h3><span style="color: green;">Amazzonn</span><span style="color: orange;">Solaire</span></h3>
+                    <p>Experts en solutions d'énergie renouvelable depuis 2023. Nous accompagnons particuliers et entreprises dans leur transition énergétique au Bénin.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/14Gw6KXc9Xc/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/AmazzonnSolaire" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com/company/AmazzonnSolaire" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/22992810213" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://instagram.com/AmazzonnSolaire" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Liens utiles</h3>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="produits.html">Produits</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html#solaire">Énergie solaire</a></li>
+                        <li><a href="services.html#eolien">Énergie éolienne</a></li>
+                        <li><a href="services.html#geothermie">Géothermie</a></li>
+                        <li><a href="services.html#audit">Audit énergétique</a></li>
+                        <li><a href="services.html#maintenance">Maintenance</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col footer-contact">
+                    <h3>Contact</h3>
+                    <address>
+                        <p><strong>Siège social:</strong><br>
+                        Cotonou, Bénin</p>
+                        
+                        <p><strong>Bureau technique:</strong><br>
+                        Djougou, Bénin</p>
+                        
+                        <p><strong>Email:</strong><br>
+                        <a href="mailto:amazzonnsolaire@gmail.com">amazzonnsolaire@gmail.com</a></p>
+                        
+                        <p><strong>Téléphone:</strong><br>
+                        <a href="tel:+2290192810213">+229 01 92 81 02 13</a></p>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2025 <span style="color: green;">Amazzonn</span><span style="color: orange;">Solaire</span>. Tous droits réservés.</p>
+                </div>
+                <div class="legal-links">
+                    <a href="mentions-legales.html">Mentions légales</a>
+                    <a href="politique-confidentialite.html">Politique de confidentialité</a>
+                    <a href="cookies.html">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menu mobile
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mainNav = document.querySelector('.main-nav');
+            
+            if (menuToggle && mainNav) {
+                menuToggle.addEventListener('click', function() {
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    this.setAttribute('aria-expanded', !isExpanded);
+                    mainNav.classList.toggle('active');
+                    this.classList.toggle('open');
+                });
+            }
+            
+            // Animation au défilement
+            const animateOnScroll = function() {
+                const services = document.querySelectorAll('.service');
+                
+                services.forEach((service, index) => {
+                    const servicePosition = service.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (servicePosition < windowHeight - 100) {
+                        service.style.opacity = '1';
+                        service.style.transform = 'translateY(0)';
+                    }
+                });
+
+                const galleryItems = document.querySelectorAll('.gallery-item');
+                galleryItems.forEach((item, index) => {
+                    const itemPosition = item.getBoundingClientRect().top;
+                    if (itemPosition < window.innerHeight - 100) {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }
+                });
+
+                const cta = document.querySelector('.cta');
+                if (cta) {
+                    const ctaPosition = cta.getBoundingClientRect().top;
+                    if (ctaPosition < window.innerHeight - 100) {
+                        cta.style.opacity = '1';
+                        cta.style.transform = 'translateY(0)';
+                    }
+                }
+            };
+            
+            // Initialisation des animations
+            const services = document.querySelectorAll('.service');
+            services.forEach((service, index) => {
+                service.style.opacity = '0';
+                service.style.transform = 'translateY(30px)';
+                service.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+            });
+
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            galleryItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(30px)';
+                item.style.transition = `opacity 0.6s ease ${index * 0.2}s, transform 0.6s ease ${index * 0.2}s`;
+            });
+
+            const cta = document.querySelector('.cta');
+            if (cta) {
+                cta.style.opacity = '0';
+                cta.style.transform = 'translateY(30px)';
+                cta.style.transition = 'opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s';
+            }
+            
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll();
+        });
+    </script>
+</body>
+</html>

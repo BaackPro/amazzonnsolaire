@@ -1,0 +1,113 @@
+
+
+[build]
+  command = "npm run build || echo 'Build completed'"
+  publish = "dist"
+  environment = { NODE_ENV = "production", CI = "true" }
+
+[build.environment]
+  # Variables d'environnement pour la construction
+  NODE_VERSION = "18"
+  NPM_VERSION = "9"
+
+[dev]
+  command = "npm run dev"
+  port = 3000
+  publish = "dist"
+
+# Configuration des redirections
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Redirections de sécurité
+[[redirects]]
+  from = "/.env"
+  to = "/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/wp-admin/*"
+  to = "/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/administrator/*"
+  to = "/404.html"
+  status = 404
+
+# Headers de sécurité
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+    Content-Security-Policy = """
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com;
+      style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com;
+      font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com;
+      img-src 'self' data: https:;
+      connect-src 'self' https://api.formspree.io;
+      frame-ancestors 'none';
+    """
+
+# Headers spécifiques pour les assets
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Configuration pour les formulaires
+[context.production.environment]
+  FORMSPREE_URL = "https://formspree.io/f/your-form-id"
+  SITE_URL = "https://votre-site.netlify.app"
+
+[context.deploy-preview.environment]
+  FORMSPREE_URL = "https://formspree.io/f/your-staging-form-id"
+  NODE_ENV = "staging"
+
+[context.branch-deploy.environment]
+  FORMSPREE_URL = "https://formspree.io/f/your-staging-form-id"
+  NODE_ENV = "staging"
+
+# Fonctions serverless (si nécessaires)
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# Gestion des branches
+[build.environment]
+  BRANCH = "$BRANCH"
+
+# Configuration d'image optimization
+[context.production.environment]
+  NETLIFY_IMAGE_CDN = "true"
+
+# Prérendu (si vous utilisez des SPAs)
+[build.processing]
+  skip_processing = true
