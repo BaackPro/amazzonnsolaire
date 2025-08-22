@@ -484,6 +484,7 @@
             display: flex;
             gap: 1rem;
             margin-top: 1.5rem;
+            flex-wrap: wrap;
         }
 
         .social-links a {
@@ -661,6 +662,19 @@
 
             .main-nav a {
                 font-size: 1.1rem;
+                padding: 0.8rem 0;
+                display: block;
+                width: 100%;
+                border-bottom: 1px solid rgba(0,0,0,0.1);
+            }
+            
+            .main-nav a:last-child {
+                border-bottom: none;
+            }
+            
+            .main-nav a:hover {
+                background-color: var(--light-color);
+                padding-left: 1rem;
             }
 
             .menu-toggle {
@@ -713,6 +727,10 @@
             .legal-links {
                 flex-direction: column;
                 gap: 0.5rem;
+            }
+            
+            .social-links {
+                justify-content: center;
             }
         }
     </style>
@@ -924,6 +942,16 @@
                     mainNav.classList.toggle('active');
                     this.classList.toggle('open');
                 });
+                
+                // Fermer le menu en cliquant sur un lien
+                const navLinks = mainNav.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mainNav.classList.remove('active');
+                        menuToggle.classList.remove('open');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    });
+                });
             }
             
             // Animation au défilement
@@ -941,7 +969,7 @@
                 });
 
                 const galleryItems = document.querySelectorAll('.gallery-item');
-                galleryItems.forEach((item, index) {
+                galleryItems.forEach((item, index) => {
                     const itemPosition = item.getBoundingClientRect().top;
                     if (itemPosition < window.innerHeight - 100) {
                         item.style.opacity = '1';

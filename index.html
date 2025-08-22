@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -7,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amazzonn Solaire - Solutions en Énergie Renouvelable</title>
     <meta name="description" content="Expert en solutions d'énergie renouvelable pour particuliers et entreprises">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -61,14 +59,17 @@
             display: flex;
             align-items: center;
             text-decoration: none;
-            color: #2e7d32;
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             font-size: 1.5rem;
         }
         
-        .logo span {
-            color: #4caf50;
+        .logo span.amazzonn {
+            color: #2e7d32; /* Vert pour Amazzonn */
+        }
+        
+        .logo span.solaire {
+            color: #FF9800; /* Orange pour Solaire */
         }
         
         .logo:hover .logo-img {
@@ -523,7 +524,7 @@
         <div class="container">
             <a href="index.html" class="logo">
                 <img src="images/logo/logoama.png" alt="Logo AmazzonnSolaire" class="logo-img">
-                <span>Amazzonn</span> <span>Solaire</span>
+                <span class="amazzonn">Amazzonn</span> <span class="solaire">Solaire</span>
             </a>
             <nav class="main-nav" id="mainNav">
                 <ul>
@@ -593,7 +594,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h3>Amazzonn Solaire</h3>
+                    <h3><span class="amazzonn">Amazzonn</span> <span class="solaire">Solaire</span></h3>
                     <p>Experts en solutions d'énergie renouvelable depuis 2023.</p>
                 </div>
                 <div class="footer-col">
@@ -618,7 +619,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; <span id="current-year">2025</span> Amazzonn Solaire. Tous droits réservés.</p>
+                <p>&copy; <span id="current-year">2025</span> <span class="amazzonn">Amazzonn</span> <span class="solaire">Solaire</span>. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
@@ -639,7 +640,6 @@
 
     <div class="overlay" id="overlay"></div>
 
-    <script src="js/script.js"></script>
     <script>
         // Mise à jour automatique de l'année dans le footer
         document.getElementById('current-year').textContent = new Date().getFullYear();
@@ -651,6 +651,17 @@
         menuToggle.addEventListener('click', function() {
             mainNav.classList.toggle('active');
             this.classList.toggle('active');
+        });
+
+        // Fermer le menu en cliquant sur un lien (pour mobile)
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    mainNav.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                }
+            });
         });
 
         // Gestion du bouton "Demandez votre site web"
